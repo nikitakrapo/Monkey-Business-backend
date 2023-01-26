@@ -27,6 +27,7 @@ dependencies {
     implementation(libs.logback)
     implementation("io.ktor:ktor-server-auth-jvm:2.2.1")
     implementation("io.ktor:ktor-server-core-jvm:2.2.1")
+    implementation(libs.firebase.admin)
     testImplementation(libs.ktor.server.tests.jvm)
     testImplementation(libs.kotlin.test.junit)
 }
