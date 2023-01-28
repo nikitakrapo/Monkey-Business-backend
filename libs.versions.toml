@@ -1,14 +1,17 @@
 [versions]
 
 kotlin = "1.8.0"
-ktor = "2.2.1"
+kotlinx-datetime = "0.4.0" # https://github.com/Kotlin/kotlinx-datetime/releases
+ktor = "2.2.1" # https://github.com/ktorio/ktor/releases
 firebase-admin = "9.1.1"
-sqldelight = "2.0.0-alpha05"
-logback = "1.4.5"
+sqldelight = "2.0.0-alpha05" # https://github.com/cashapp/sqldelight/releases
+logback = "1.4.5" # https://kotlinlang.org/docs/releases.html#release-details
 
 [libraries]
 
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 ktor-server-core-jvm = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-server-authentication = { module = "io.ktor:ktor-server-auth", version.ref = "ktor" }

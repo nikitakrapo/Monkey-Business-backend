@@ -28,6 +28,7 @@ sqldelight {
 }
 
 dependencies {
+    implementation(libs.kotlinx.datetime)
     implementation(libs.ktor.server.core.jvm)
     implementation(libs.ktor.server.authentication)
     implementation(libs.ktor.server.content.negotiation.jvm)
