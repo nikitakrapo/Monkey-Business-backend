@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.sqldelight)
 }
 
 group = "com.nikitakrapo"
@@ -18,6 +19,14 @@ repositories {
     mavenCentral()
 }
 
+sqldelight {
+    databases {
+        create("TransactionsDatabase") {
+            packageName.set("finance.transactions")
+        }
+    }
+}
+
 dependencies {
     implementation(libs.ktor.server.core.jvm)
     implementation(libs.ktor.server.authentication)
@@ -28,6 +37,7 @@ dependencies {
     implementation("io.ktor:ktor-server-auth-jvm:2.2.1")
     implementation("io.ktor:ktor-server-core-jvm:2.2.1")
     implementation(libs.firebase.admin)
+    implementation(libs.sqldelight.driver.jvm)
     testImplementation(libs.ktor.server.tests.jvm)
     testImplementation(libs.kotlin.test.junit)
 }

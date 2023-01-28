@@ -1,9 +1,9 @@
-package com.nikitakrapo
+package com.nikitakrapo.monkeybusiness
 
 import com.google.firebase.FirebaseApp
-import com.nikitakrapo.plugins.configureAuthentication
-import com.nikitakrapo.plugins.configureRouting
-import com.nikitakrapo.plugins.configureSerialization
+import com.nikitakrapo.monkeybusiness.plugins.configureAuthentication
+import com.nikitakrapo.monkeybusiness.plugins.configureRouting
+import com.nikitakrapo.monkeybusiness.plugins.configureSerialization
 import io.ktor.server.application.Application
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty

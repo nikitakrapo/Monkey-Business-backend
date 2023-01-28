@@ -1,4 +1,4 @@
-package com.nikitakrapo.plugins
+package com.nikitakrapo.monkeybusiness.plugins
 
 import io.ktor.server.routing.*
 import io.ktor.http.*
@@ -16,8 +16,8 @@ fun Application.configureRouting() {
             call.respondText("Hello World!")
         }
         authenticate {
-            get("/balance") {
-                call.respondText("0")
+            get("/transactions") {
+                call.respondText("""{"transactions":[]}""")
             }
         }
     }

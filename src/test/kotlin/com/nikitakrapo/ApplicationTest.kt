@@ -1,6 +1,6 @@
 package com.nikitakrapo
 
-import com.nikitakrapo.plugins.configureRouting
+import com.nikitakrapo.monkeybusiness.plugins.configureRouting
 import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpStatusCode

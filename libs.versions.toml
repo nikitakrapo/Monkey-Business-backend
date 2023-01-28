@@ -1,9 +1,9 @@
 [versions]
 
-kotlin = "1.7.22"
+kotlin = "1.8.0"
 ktor = "2.2.1"
 firebase-admin = "9.1.1"
-sqldelight = "1.5.4"
+sqldelight = "2.0.0-alpha05"
 logback = "1.2.11"
 
 [libraries]
@@ -19,7 +19,7 @@ ktor-server-netty-jvm = { module = "io.ktor:ktor-server-netty-jvm", version.ref 
 
 firebase-admin = { module = "com.google.firebase:firebase-admin", version.ref = "firebase-admin" }
 
-sqldelight-gradle = { module = "com.squareup.sqldelight:gradle-plugin", version.ref = "sqldelight" }
+sqldelight-driver-jvm = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
 
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 
@@ -28,4 +28,4 @@ logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-sqldelight = { id = "com.squareup.sqldelight", version.ref = "sqldelight" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
