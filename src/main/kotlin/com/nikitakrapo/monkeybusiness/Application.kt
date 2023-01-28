@@ -1,6 +1,7 @@
 package com.nikitakrapo.monkeybusiness
 
 import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
 import com.nikitakrapo.monkeybusiness.plugins.configureAuthentication
 import com.nikitakrapo.monkeybusiness.plugins.configureRouting
 import com.nikitakrapo.monkeybusiness.plugins.configureSerialization
@@ -17,7 +18,8 @@ fun main() {
 
 private fun Application.module() {
     configureSerialization()
-    configureAuthentication()
+    val firebaseAuth = FirebaseAuth.getInstance()
+    configureAuthentication(firebaseAuth)
     configureRouting()
 }
 

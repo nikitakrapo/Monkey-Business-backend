@@ -3,6 +3,7 @@ package com.nikitakrapo.monkeybusiness.plugins
 import io.ktor.server.routing.*
 import io.ktor.http.*
 import io.ktor.server.application.*
+import io.ktor.server.auth.UserIdPrincipal
 import io.ktor.server.auth.authenticate
 import io.ktor.server.auth.authentication
 import io.ktor.server.response.*
@@ -18,6 +19,7 @@ fun Application.configureRouting() {
         authenticate {
             get("/transactions") {
                 call.respondText("""{"transactions":[]}""")
+                call.authentication.principal<UserIdPrincipal>()
             }
         }
     }
