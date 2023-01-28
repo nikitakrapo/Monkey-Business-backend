@@ -1,6 +1,6 @@
 package com.nikitakrapo
 
-import com.nikitakrapo.monkeybusiness.plugins.configureRouting
+import com.nikitakrapo.monkeybusiness.plugins.transactionsRouting
 import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpStatusCode
@@ -12,7 +12,7 @@ class ApplicationTest {
     @Test
     fun testRoot() = testApplication {
         application {
-            configureRouting()
+            transactionsRouting()
         }
         client.get("/").apply {
             assertEquals(HttpStatusCode.OK, status)
