@@ -1,6 +1,5 @@
--- TODO: maybe make shared models module for backend and mobile
-
 CREATE TABLE TransactionItem ( -- Transaction is reserved in SQLite
+    uuid TEXT NOT NULL,
     id TEXT NOT NULL,
     amount INTEGER NOT NULL,
     currency TEXT NOT NULL,
@@ -9,19 +8,23 @@ CREATE TABLE TransactionItem ( -- Transaction is reserved in SQLite
 );
 
 insertTransaction:
-INSERT INTO TransactionItem(id, amount, currency, timestamp, name)
-VALUES (?, ?, ?, ?, ?);
+INSERT INTO TransactionItem(uuid, id, amount, currency, timestamp, name)
+VALUES (?, ?, ?, ?, ?, ?);
 
 removeTransaction:
 DELETE FROM TransactionItem
-WHERE id = ?;
+WHERE uuid = ?
+AND id = ?;
 
 removeAllTransactions:
-DELETE FROM TransactionItem;
+DELETE FROM TransactionItem
+WHERE uuid = ?;
 
 selectTransactionById:
 SELECT * FROM TransactionItem
-WHERE id = ?;
+WHERE uuid = ?
+AND id = ?;
 
 selectAllTransactions:
-SELECT * FROM TransactionItem;
+SELECT * FROM TransactionItem
+WHERE uuid = ?;
