@@ -34,8 +34,6 @@ dependencies {
     implementation(libs.ktor.serialization.kotlinx.json.jvm)
     implementation(libs.ktor.server.netty.jvm)
     implementation(libs.logback)
-    implementation("io.ktor:ktor-server-auth-jvm:2.2.1")
-    implementation("io.ktor:ktor-server-core-jvm:2.2.1")
     implementation(libs.firebase.admin)
     implementation(libs.sqldelight.driver.jvm)
     testImplementation(libs.ktor.server.tests.jvm)
