@@ -5,10 +5,16 @@ plugins {
     alias(libs.plugins.sqldelight)
 }
 
+ktor {
+    fatJar {
+        archiveFileName.set("monkey-business-backend-fat.jar")
+    }
+}
+
 group = "com.nikitakrapo"
 version = "0.0.1"
 application {
-    mainClass.set("com.nikitakrapo.ApplicationKt")
+    mainClass.set("com.nikitakrapo.monkeybusiness.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")

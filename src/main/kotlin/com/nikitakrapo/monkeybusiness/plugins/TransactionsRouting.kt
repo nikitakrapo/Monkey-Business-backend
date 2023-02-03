@@ -1,7 +1,8 @@
 package com.nikitakrapo.monkeybusiness.plugins
 
-import com.nikitakrapo.monkeybusiness.finance.models.Transaction
 import com.nikitakrapo.monkeybusiness.finance.transactions.TransactionsRepository
+import com.nikitakrapo.monkeybusiness.finance.transactions.dto.TransactionRequest
+import com.nikitakrapo.monkeybusiness.finance.transactions.dto.TransactionsResponse
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.ApplicationCall
@@ -23,7 +24,8 @@ fun Application.transactionsRouting(
         authenticate {
             post("/transaction") {
                 val uuid = getUuid()
-                val transaction = call.receive<Transaction>()
+                val request = call.receive<TransactionRequest>()
+                val transaction = request.transaction
                 transactionsRepository.insertTransactions(
                     uuid = uuid,
                     transaction = transaction
@@ -33,7 +35,10 @@ fun Application.transactionsRouting(
             get("/transactions") {
                 val uuid = getUuid()
                 val transactions = transactionsRepository.getAllTransactions(uuid)
-                call.respond(transactions)
+                val response = TransactionsResponse(
+                    transactionList = transactions
+                )
+                call.respond(response)
             }
         }
     }
