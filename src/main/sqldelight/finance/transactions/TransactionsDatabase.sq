@@ -27,4 +27,5 @@ AND id = ?;
 
 selectAllTransactions:
 SELECT * FROM TransactionItem
-WHERE uuid = ?;
+WHERE uuid = ?
+ORDER BY timestamp DESC;
