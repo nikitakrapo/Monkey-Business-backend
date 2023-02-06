@@ -32,5 +32,5 @@ private fun Application.module() {
 }
 
 private fun initializeApp() {
-    FirebaseApp.initializeApp();
+    FirebaseApp.initializeApp()
 }
