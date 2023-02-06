@@ -7,7 +7,7 @@ import com.nikitakrapo.monkeybusiness.finance.transactions.dto.Transaction
 internal fun mapToTransaction(
     uuid: String,
     id: String,
-    amount: Long,
+    amount: Double,
     currency: String,
     timestamp: Long,
     name: String,
