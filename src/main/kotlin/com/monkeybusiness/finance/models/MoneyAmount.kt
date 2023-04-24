@@ -1,4 +1,4 @@
-package com.nikitakrapo.monkeybusiness.finance.models
+package com.monkeybusiness.finance.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

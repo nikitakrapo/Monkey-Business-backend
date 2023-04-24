@@ -1,4 +1,4 @@
-package com.nikitakrapo.monkeybusiness.plugins
+package com.monkeybusiness.plugins
 
 import io.ktor.server.application.Application
 import io.ktor.server.application.call

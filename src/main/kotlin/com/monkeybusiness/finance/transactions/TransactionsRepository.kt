@@ -1,22 +1,22 @@
-package com.nikitakrapo.monkeybusiness.finance.transactions
+package com.monkeybusiness.finance.transactions
 
 import app.cash.sqldelight.db.SqlDriver
-import app.cash.sqldelight.driver.jdbc.sqlite.JdbcSqliteDriver
-import com.nikitakrapo.monkeybusiness.finance.db.asListSuspend
-import com.nikitakrapo.monkeybusiness.finance.transactions.dto.Transaction
-import finance.transactions.TransactionsDatabase
+import com.monkeybusiness.transactions.TransactionsDatabase
+import com.monkeybusiness.finance.db.asListSuspend
+import com.monkeybusiness.finance.transactions.dto.Transaction
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class TransactionsRepository {
+class TransactionsRepository(
+    sqlDriver: SqlDriver,
+) {
 
-    private val driver = run {
-        val driver: SqlDriver = JdbcSqliteDriver(JdbcSqliteDriver.IN_MEMORY)
-        TransactionsDatabase.Schema.create(driver)
-        driver
+    init {
+        TransactionsDatabase.Schema.create(sqlDriver)
     }
-    private val transactionsDatabase = TransactionsDatabase(driver)
-    private val dbQueries = transactionsDatabase.transactionsDatabaseQueries
+
+    private val transactionsDatabase = TransactionsDatabase(sqlDriver)
+    private val dbQueries get() = transactionsDatabase.transactionsDatabaseQueries
 
     suspend fun insertTransactions(
         uuid: String,

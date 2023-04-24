@@ -1,4 +1,4 @@
-package com.nikitakrapo.monkeybusiness.plugins
+package com.monkeybusiness.plugins
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseToken

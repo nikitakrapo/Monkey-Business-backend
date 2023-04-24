@@ -14,7 +14,7 @@ ktor {
 group = "com.nikitakrapo"
 version = "0.0.1"
 application {
-    mainClass.set("com.nikitakrapo.monkeybusiness.ApplicationKt")
+    mainClass.set("com.monkeybusiness.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -27,8 +27,13 @@ repositories {
 
 sqldelight {
     databases {
+        create("BankAccountsDatabase") {
+            packageName.set("com.monkeybusiness.accounts")
+            sourceFolders.set(listOf("sqldelight/accounts"))
+        }
         create("TransactionsDatabase") {
-            packageName.set("finance.transactions")
+            packageName.set("com.monkeybusiness.transactions")
+            sourceFolders.set(listOf("sqldelight/transactions"))
         }
     }
 }

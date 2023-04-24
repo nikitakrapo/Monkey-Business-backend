@@ -1,8 +1,8 @@
-package com.nikitakrapo.monkeybusiness.finance.transactions
+package com.monkeybusiness.finance.transactions
 
-import com.nikitakrapo.monkeybusiness.finance.models.Currency
-import com.nikitakrapo.monkeybusiness.finance.models.MoneyAmount
-import com.nikitakrapo.monkeybusiness.finance.transactions.dto.Transaction
+import com.monkeybusiness.finance.models.Currency
+import com.monkeybusiness.finance.models.MoneyAmount
+import com.monkeybusiness.finance.transactions.dto.Transaction
 
 internal fun mapToTransaction(
     uuid: String,

@@ -1,6 +1,6 @@
-package com.nikitakrapo.monkeybusiness.finance.transactions.dto
+package com.monkeybusiness.finance.transactions.dto
 
-import com.nikitakrapo.monkeybusiness.finance.models.MoneyAmount
+import com.monkeybusiness.finance.models.MoneyAmount
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

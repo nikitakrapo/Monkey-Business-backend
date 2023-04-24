@@ -1,4 +1,4 @@
-package com.nikitakrapo.monkeybusiness.plugins
+package com.monkeybusiness.plugins
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.plugins.contentnegotiation.*

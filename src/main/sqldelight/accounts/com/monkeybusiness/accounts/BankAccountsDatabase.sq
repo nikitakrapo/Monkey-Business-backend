@@ -1,0 +1,24 @@
+CREATE TABLE BankAccount (
+    uid TEXT NOT NULL,
+    iban TEXT NOT NULL,
+    currencyCode TEXT NOT NULL
+);
+
+insertAccount:
+INSERT INTO BankAccount(uid, iban, currencyCode)
+VALUES (?, ?, ?);
+
+removeTransaction:
+DELETE FROM BankAccount
+WHERE uid = ?
+AND iban = ?;
+
+selectTransactionByIban:
+SELECT * FROM BankAccount
+WHERE uid = ?
+AND iban = ?;
+
+selectAllAccounts:
+SELECT * FROM BankAccount
+WHERE uid = ?
+ORDER BY iban DESC;
