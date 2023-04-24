@@ -2,7 +2,7 @@ package com.monkeybusiness
 
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
-import com.monkeybusiness.finance.BankAccountsRepository
+import com.monkeybusiness.finance.FinancesRepository
 import com.monkeybusiness.finance.bankAccountsRouting
 import com.monkeybusiness.sqldelight.SqlDriverProvider
 import com.monkeybusiness.plugins.basicRouting
@@ -33,8 +33,8 @@ private fun Application.module() {
     basicRouting()
 
     val sqlDriver = SqlDriverProvider.sqlDriver
-    val bankAccountsRepository = BankAccountsRepository(sqlDriver)
-    bankAccountsRouting(bankAccountsRepository = bankAccountsRepository)
+    val financesRepository = FinancesRepository(sqlDriver)
+    bankAccountsRouting(financesRepository = financesRepository)
 }
 
 private fun initializeApp() {

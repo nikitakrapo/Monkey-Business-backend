@@ -1,0 +1,21 @@
+CREATE TABLE BankCard (
+    pan TEXT PRIMARY KEY NOT NULL,
+    iban TEXT NOT NULL,
+    FOREIGN KEY(iban) REFERENCES BankAccount(iban)
+);
+
+insertCard:
+INSERT INTO BankCard(pan, iban)
+VALUES (?, ?);
+
+removeCard:
+DELETE FROM BankCard
+WHERE pan = ?;
+
+selectTransactionByPan:
+SELECT * FROM BankCard
+WHERE pan = ?;
+
+selectAllCardsByIban:
+SELECT * FROM BankCard
+WHERE iban = ?;

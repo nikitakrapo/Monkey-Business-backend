@@ -7,12 +7,12 @@ import kotlinx.serialization.Serializable
 class BankAccount(
     @SerialName("iban")
     val iban: String,
-    @SerialName("name")
-    val name: String,
     @SerialName("balance")
     val balance: Long,
     @SerialName("currencyCode")
     val currencyCode: String,
     @SerialName("cards")
     val cards: List<BankCard>,
+    @SerialName("name")
+    val name: String,
 )

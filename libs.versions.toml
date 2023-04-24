@@ -23,6 +23,7 @@ ktor-server-netty-jvm = { module = "io.ktor:ktor-server-netty-jvm", version.ref 
 firebase-admin = { module = "com.google.firebase:firebase-admin", version.ref = "firebase-admin" }
 
 sqldelight-driver-jvm = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
+sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
 
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 

@@ -27,9 +27,8 @@ repositories {
 
 sqldelight {
     databases {
-        create("BankAccountsDatabase") {
-            packageName.set("com.monkeybusiness.accounts")
-            sourceFolders.set(listOf("sqldelight/accounts"))
+        create("FinancesDatabase") {
+            packageName.set("com.monkeybusiness")
         }
     }
 }
@@ -44,6 +43,7 @@ dependencies {
     implementation(libs.logback)
     implementation(libs.firebase.admin)
     implementation(libs.sqldelight.driver.jvm)
+    implementation(libs.sqldelight.coroutines)
     testImplementation(libs.ktor.server.tests.jvm)
     testImplementation(libs.kotlin.test.junit)
 }

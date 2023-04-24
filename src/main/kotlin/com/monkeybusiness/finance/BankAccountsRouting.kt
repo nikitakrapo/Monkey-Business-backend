@@ -1,9 +1,6 @@
 package com.monkeybusiness.finance
 
-import com.monkeybusiness.finance.dto.BankAccount
 import com.monkeybusiness.finance.dto.BankAccountOpeningRequest
-import com.monkeybusiness.finance.dto.BankAccountsResponse
-import com.monkeybusiness.finance.dto.BankCard
 import com.monkeybusiness.finance.models.Currency
 import com.monkeybusiness.network.getUid
 import io.ktor.http.HttpStatusCode
@@ -17,7 +14,7 @@ import io.ktor.server.routing.post
 import io.ktor.server.routing.routing
 
 fun Application.bankAccountsRouting(
-    bankAccountsRepository: BankAccountsRepository,
+    financesRepository: FinancesRepository,
 ) {
     routing {
         authenticate {
@@ -30,7 +27,7 @@ fun Application.bankAccountsRouting(
                     call.respond(HttpStatusCode.BadRequest)
                     return@post
                 }
-                bankAccountsRepository.createBankAccount(
+                financesRepository.createBankAccount(
                     uid = uid,
                     currency = currency
                 )
@@ -39,22 +36,8 @@ fun Application.bankAccountsRouting(
 
             get("/bank-accounts") {
                 val uid = getUid()
-                val accounts = bankAccountsRepository.getAllBankAccounts(uid = uid)
-                val fakeAccounts = BankAccountsResponse(
-                    accounts = listOf(
-                        BankAccount(
-                            iban = "BE123456789101112",
-                            name = "Simple name",
-                            balance = 90000000,
-                            currencyCode = "RUB",
-                            cards = listOf(
-                                BankCard("2200012345678901"),
-                                BankCard("4276123456789012"),
-                            )
-                        )
-                    )
-                )
-                call.respond(fakeAccounts)
+                val accounts = financesRepository.getAllBankAccounts(uid = uid)
+                call.respond(accounts)
             }
         }
     }

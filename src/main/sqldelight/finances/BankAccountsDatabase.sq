@@ -1,19 +1,21 @@
 CREATE TABLE BankAccount (
+    iban TEXT PRIMARY KEY NOT NULL,
     uid TEXT NOT NULL,
-    iban TEXT NOT NULL,
-    currencyCode TEXT NOT NULL
+    balance INTEGER NOT NULL,
+    currencyCode TEXT NOT NULL,
+    name TEXT NOT NULL
 );
 
 insertAccount:
-INSERT INTO BankAccount(uid, iban, currencyCode)
-VALUES (?, ?, ?);
+INSERT INTO BankAccount(iban, uid, balance, currencyCode, name)
+VALUES (?, ?, ?, ?, ?);
 
-removeTransaction:
+removeAccount:
 DELETE FROM BankAccount
 WHERE uid = ?
 AND iban = ?;
 
-selectTransactionByIban:
+selectAccountByIban:
 SELECT * FROM BankAccount
 WHERE uid = ?
 AND iban = ?;
