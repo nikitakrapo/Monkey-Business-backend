@@ -1,4 +1,4 @@
-package com.monkeybusiness.database
+package com.monkeybusiness.sqldelight
 
 import app.cash.sqldelight.driver.jdbc.sqlite.JdbcSqliteDriver
 

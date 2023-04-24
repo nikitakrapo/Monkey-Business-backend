@@ -31,10 +31,6 @@ sqldelight {
             packageName.set("com.monkeybusiness.accounts")
             sourceFolders.set(listOf("sqldelight/accounts"))
         }
-        create("TransactionsDatabase") {
-            packageName.set("com.monkeybusiness.transactions")
-            sourceFolders.set(listOf("sqldelight/transactions"))
-        }
     }
 }
 

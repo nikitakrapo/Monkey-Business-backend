@@ -1,4 +1,4 @@
-package com.monkeybusiness.finance.db
+package com.monkeybusiness.sqldelight
 
 import app.cash.sqldelight.Query
 import kotlinx.coroutines.Dispatchers

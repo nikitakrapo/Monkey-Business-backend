@@ -2,13 +2,11 @@ package com.monkeybusiness
 
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
-import com.monkeybusiness.accounts.BankAccountsRepository
-import com.monkeybusiness.accounts.bankAccountsRouting
-import com.monkeybusiness.database.SqlDriverProvider
-import com.monkeybusiness.finance.transactions.TransactionsRepository
+import com.monkeybusiness.finance.BankAccountsRepository
+import com.monkeybusiness.finance.bankAccountsRouting
+import com.monkeybusiness.sqldelight.SqlDriverProvider
 import com.monkeybusiness.plugins.basicRouting
 import com.monkeybusiness.plugins.configureAuthentication
-import com.monkeybusiness.plugins.transactionsRouting
 import com.monkeybusiness.plugins.configureSerialization
 import io.ktor.server.application.Application
 import io.ktor.server.engine.embeddedServer
@@ -35,12 +33,8 @@ private fun Application.module() {
     basicRouting()
 
     val sqlDriver = SqlDriverProvider.sqlDriver
-
     val bankAccountsRepository = BankAccountsRepository(sqlDriver)
     bankAccountsRouting(bankAccountsRepository = bankAccountsRepository)
-
-    val transactionsRepository = TransactionsRepository(sqlDriver)
-    transactionsRouting(transactionsRepository = transactionsRepository)
 }
 
 private fun initializeApp() {

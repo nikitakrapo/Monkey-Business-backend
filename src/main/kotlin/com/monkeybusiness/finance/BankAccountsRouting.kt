@@ -1,9 +1,9 @@
-package com.monkeybusiness.accounts
+package com.monkeybusiness.finance
 
-import com.monkeybusiness.accounts.dto.BankAccount
-import com.monkeybusiness.accounts.dto.BankAccountOpeningRequest
-import com.monkeybusiness.accounts.dto.BankAccountsResponse
-import com.monkeybusiness.accounts.dto.BankCard
+import com.monkeybusiness.finance.dto.BankAccount
+import com.monkeybusiness.finance.dto.BankAccountOpeningRequest
+import com.monkeybusiness.finance.dto.BankAccountsResponse
+import com.monkeybusiness.finance.dto.BankCard
 import com.monkeybusiness.finance.models.Currency
 import com.monkeybusiness.network.getUid
 import io.ktor.http.HttpStatusCode

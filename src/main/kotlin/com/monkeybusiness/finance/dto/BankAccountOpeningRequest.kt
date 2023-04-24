@@ -1,4 +1,4 @@
-package com.monkeybusiness.accounts.dto
+package com.monkeybusiness.finance.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

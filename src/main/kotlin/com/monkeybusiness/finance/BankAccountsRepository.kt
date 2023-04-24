@@ -1,6 +1,7 @@
-package com.monkeybusiness.accounts
+package com.monkeybusiness.finance
 
 import app.cash.sqldelight.db.SqlDriver
+import com.monkeybusiness.accounts.BankAccountsDatabase
 import com.monkeybusiness.finance.models.Currency
 
 class BankAccountsRepository(
