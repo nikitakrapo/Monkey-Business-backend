@@ -1,6 +1,7 @@
 package com.monkeybusiness.finance
 
 import com.monkeybusiness.finance.dto.BankAccountOpeningRequest
+import com.monkeybusiness.finance.dto.BankAccountsResponse
 import com.monkeybusiness.finance.models.Currency
 import com.monkeybusiness.network.getUid
 import io.ktor.http.HttpStatusCode
@@ -37,7 +38,8 @@ fun Application.bankAccountsRouting(
             get("/bank-accounts") {
                 val uid = getUid()
                 val accounts = financesRepository.getAllBankAccounts(uid = uid)
-                call.respond(accounts)
+                val response = BankAccountsResponse(accounts = accounts)
+                call.respond(response)
             }
         }
     }
